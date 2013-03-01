@@ -63,5 +63,9 @@
     <string name="delta">Delta</string>
     <string name="device"><i>(device)</i></string>
     <string name="dev_key">"AI39si65-ckVUOrJGNp_eHsR5PbapuLEl5-QvVuEodNC_4T7iC9oQltcP69yxLqfTxWEx6iKo4jNNCSF0lqiv88dXIY-Dncwqw"</string>
+    <string name="record">Record</string>
+    <string name="strange">Something strange happened</string>
+    <string name="max_duration">Maximum duration reached</string>
+    <string name="max_size">Maximum file size reached</string>
 
 </resources>

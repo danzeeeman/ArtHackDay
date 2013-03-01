@@ -1,7 +1,12 @@
 package com.arthackday.killerapp;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
@@ -22,10 +27,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
+import android.hardware.Camera.PictureCallback;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.media.MediaRecorder.OnInfoListener;
 import android.net.Uri;
+import android.provider.MediaStore.Files.FileColumns;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,9 +47,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -81,6 +90,7 @@ public class GodMode extends FragmentActivity implements
 
 	CameraPreview cameraPreview;
 	private boolean godmode;
+	private Uri fileUri;
 
 	@Override
 	protected void onResume() {
@@ -97,8 +107,9 @@ public class GodMode extends FragmentActivity implements
 			GCMRegistrar.register(this, KillerApp.SENDER_ID);
 		} else {
 			Log.d(getClass().getSimpleName(), "Existing registration: " + regId);
-			Toast.makeText(this, regId, Toast.LENGTH_LONG).show();
 		}
+
+		godmode = true;
 
 		// initialize the camera in background, as this may take a while
 		new AsyncTask<Void, Void, Camera>() {
@@ -131,49 +142,21 @@ public class GodMode extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.godmode);
 
+		fileUri = getOutputMediaFileUri(FileColumns.MEDIA_TYPE_IMAGE);
+
 		// cameraPreviewFrame = (FrameLayout) findViewById(R.id.fakepreview);
 
 		cameraPreviewFrame = (FrameLayout) findViewById(R.id.video);
-		// Instantiate a ViewPager and a PagerAdapter.
-		mPager = (ViewPager) findViewById(R.id.pager);
-		mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-		mPager.setAdapter(mPagerAdapter);
-		mPager.setOffscreenPageLimit(5);
 
-		mPager.setOnPageChangeListener(new OnPageChangeListener() {
-			private int mPosition;
+		cameraPreviewFrame.setOnTouchListener(new OnTouchListener() {
 
 			@Override
-			public void onPageSelected(int position) {
-				mPosition = position;
-			}
-
-			@Override
-			public void onPageScrolled(int position, float positionOffset,
-					int positionOffsetPixels) {
-
-			}
-
-			@Override
-			public void onPageScrollStateChanged(int state) {
-
+			public boolean onTouch(View arg0, MotionEvent arg1) {
+				camera.takePicture(null, null, mPicture);
+				return false;
 			}
 		});
 
-	}
-
-	@Override
-	public void onBackPressed() {
-		if (mPager.getCurrentItem() == 0) {
-			// If the user is currently looking at the first step, allow the
-			// system to handle the
-			// Back button. This calls finish() on this activity and pops the
-			// back stack.
-			super.onBackPressed();
-		} else {
-			// Otherwise, select the previous step.
-			mPager.setCurrentItem(mPager.getCurrentItem() - 1);
-		}
 	}
 
 	/**
@@ -219,9 +202,6 @@ public class GodMode extends FragmentActivity implements
 		// add the preview to our preview frame
 		this.cameraPreviewFrame.addView(this.cameraPreview, 0);
 
-		if (!recording) {
-			//startRecording();
-		}
 	}
 
 	void releaseCamera() {
@@ -279,8 +259,8 @@ public class GodMode extends FragmentActivity implements
 
 			}
 		});
-		this.mediaRecorder.setMaxDuration(300);
-		this.mediaRecorder.setMaxFileSize(5000);
+		this.mediaRecorder.setMaxDuration(60);
+		this.mediaRecorder.setMaxFileSize(500);
 		try {
 			recording = true;
 			mediaRecorder.prepare();
@@ -319,7 +299,7 @@ public class GodMode extends FragmentActivity implements
 			this.releaseMediaRecorder();
 		}
 		if (this.file == null || !this.file.exists()) {
-			startRecording();
+
 		} else {
 			try {
 				Log.i("REMOVE BEFORE COMMIT", String.format(
@@ -335,7 +315,7 @@ public class GodMode extends FragmentActivity implements
 	private File initFile() {
 		File dir = new File(
 				Environment
-						.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES),
+						.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),
 				this.getClass().getPackage().getName());
 		if (!dir.exists() && !dir.mkdirs()) {
 			Log.wtf("REMOVE BEFORE COMMIT",
@@ -349,6 +329,79 @@ public class GodMode extends FragmentActivity implements
 					"ArtHackDay-%d.mp4", System.currentTimeMillis()));
 		}
 		return this.file;
+	}
+
+	private PictureCallback mPicture = new PictureCallback() {
+
+		@Override
+		public void onPictureTaken(byte[] data, Camera camera) {
+
+			File pictureFile = getOutputMediaFile(MEDIA_TYPE_IMAGE);
+			if (pictureFile == null) {
+				Log.d("ARTHACKDAY",
+						"Error creating media file, check storage permissions: ");
+				return;
+			}
+			try {
+				FileOutputStream fos = new FileOutputStream(pictureFile);
+				fos.write(data);
+				fos.close();
+			} catch (FileNotFoundException e) {
+				Log.d("ARTHACKDAY", "File not found: " + e.getMessage());
+			} catch (IOException e) {
+				Log.d("ARTHACKDAY", "Error accessing file: " + e.getMessage());
+			}
+
+			Intent i = new Intent();
+			i.setClassName("com.arthackday.killerapp",
+					"com.arthackday.killerapp.KillerHomeScreen");
+			startActivity(i);
+		}
+	};
+
+	public static final int MEDIA_TYPE_IMAGE = 1;
+	public static final int MEDIA_TYPE_VIDEO = 2;
+
+	/** Create a file Uri for saving an image or video */
+	private static Uri getOutputMediaFileUri(int type) {
+		return Uri.fromFile(getOutputMediaFile(type));
+	}
+
+	/** Create a File for saving an image or video */
+	private static File getOutputMediaFile(int type) {
+		// To be safe, you should check that the SDCard is mounted
+		// using Environment.getExternalStorageState() before doing this.
+
+		File mediaStorageDir = new File(
+				Environment
+						.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+				"ArtHackDay");
+		// This location works best if you want the created images to be shared
+		// between applications and persist after your app has been uninstalled.
+
+		// Create the storage directory if it does not exist
+		if (!mediaStorageDir.exists()) {
+			if (!mediaStorageDir.mkdirs()) {
+				Log.d("ArtHackDay", "failed to create directory");
+				return null;
+			}
+		}
+
+		// Create a media file name
+		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+				.format(new Date());
+		File mediaFile;
+		if (type == MEDIA_TYPE_IMAGE) {
+			mediaFile = new File(mediaStorageDir.getPath() + File.separator
+					+ "IMG_" + timeStamp + ".jpg");
+		} else if (type == MEDIA_TYPE_VIDEO) {
+			mediaFile = new File(mediaStorageDir.getPath() + File.separator
+					+ "VID_" + timeStamp + ".mp4");
+		} else {
+			return null;
+		}
+
+		return mediaFile;
 	}
 
 }
