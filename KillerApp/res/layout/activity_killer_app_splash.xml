@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splashlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="@color/black_overlay"
+    tools:context=".KillerAppSplash" >
+
+    <LinearLayout
+        android:id="@+id/fullscreen_content_controls"
+        style="?buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/black_overlay"
+        android:gravity="top"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent" >
+
+        <Button
+            android:id="@+id/dummy_button1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/action_button" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rotate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="140dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="140dp" >
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fullscreen_content_controls"
+        style="?buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/black_overlay"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent" >
+
+        <Button
+            android:id="@+id/dummy_button"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/action_button" />
+    </LinearLayout>
+
+</RelativeLayout>

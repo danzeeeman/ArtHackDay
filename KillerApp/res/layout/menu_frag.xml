@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        style="?android:textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="16dp"
+        android:text="@string/app_name" />
+
+    <LinearLayout
+        android:id="@+id/button_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arthackday" >
+        </Button>
+
+        <Button
+            android:id="@+id/games"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arthackday" >
+        </Button>
+    </LinearLayout>
+
+</FrameLayout>
