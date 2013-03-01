@@ -99,22 +99,19 @@ void testApp::draw(){
     
     
     ofPushMatrix();
-	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+	ofTranslate(ofGetWidth()-100, ofGetHeight()-100);
 	ofSetColor(255, 255, 0);
-	ofLine(0, 0, p.x * ofGetHeight() / 2, 0);
+	ofLine(0, 0, p.x * 100, 0);
 	ofSetColor(255, 0, 255);
-	ofLine(0, 0, 0, -p.y * ofGetWidth() / 2);
+	ofLine(0, 0, 0, -p.y * 100);
 	// we don't draw z as the perspective might be confusing
 	// but it's approximately one when the device is still and parallel
 	// to the ground
-    ofSetColor(255, 0, 0);
-    ofBox(p.x*ofGetWidth()/2, -p.y*ofGetHeight()/2, p.z*45, 10);
-    
 	ofPopMatrix();
-    
     ofPushMatrix();
-    ofTranslate(0,3*ofGetHeight()/4);
+    ofTranslate(0, ofGetHeight()/2);
     drawCurve(points, 50, 0, 0);
+    ofPopMatrix();
 }
 
 
