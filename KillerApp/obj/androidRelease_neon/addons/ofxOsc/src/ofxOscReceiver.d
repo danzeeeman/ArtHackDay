@@ -1,26 +1,26 @@
 obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
  ../../../addons/ofxOsc/src/ofxOscReceiver.cpp \
  ../../../addons/ofxOsc/src/ofxOscReceiver.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/deque \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/deque \
  ../../../libs/openFrameworks/ofMain.h \
  ../../../libs/openFrameworks//utils/ofConstants.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/typeinfo \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/typeinfo \
  ../../../libs/glu/include_android/glu.h \
  ../../../libs/tess2/include/tesselator.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstdlib \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstdio \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstdarg \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cmath \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/ctime \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/string \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/vector \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/sstream \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/iomanip \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cfloat \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstdlib \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstdio \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstdarg \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cmath \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/ctime \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/string \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/iostream \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/vector \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstring \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/sstream \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/iomanip \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cfloat \
  ../../../libs/openFrameworks//utils/ofFileUtils.h \
  ../../../libs/poco/include/Poco/File.h \
  ../../../libs/poco/include/Poco/Foundation.h \
@@ -34,16 +34,16 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
  ../../../libs/openFrameworks//utils/ofLog.h \
  ../../../libs/openFrameworks//types/ofTypes.h \
  ../../../libs/openFrameworks//types/ofColor.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/limits \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/limits \
  ../../../libs/openFrameworks//math/ofMath.h \
  ../../../libs/openFrameworks//types/ofPoint.h \
  ../../../libs/openFrameworks//math/ofVec3f.h \
  ../../../libs/openFrameworks//math/ofVec2f.h \
  ../../../libs/openFrameworks//math/ofVec4f.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/tr1/memory \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/tr1/memory \
  ../../../libs/poco/include/Poco/Mutex.h \
  ../../../libs/poco/include/Poco/Exception.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/stdexcept \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/stdexcept \
  ../../../libs/poco/include/Poco/ScopedLock.h \
  ../../../libs/poco/include/Poco/Mutex_POSIX.h \
  ../../../libs/openFrameworks//utils/ofSystemUtils.h \
@@ -58,7 +58,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
  ../../../libs/poco/include/Poco/AtomicCounter.h \
  ../../../libs/poco/include/Poco/AutoPtr.h \
  ../../../libs/openFrameworks//utils/ofURLFileLoader.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/queue \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/queue \
  ../../../libs/openFrameworks//events/ofEvents.h \
  ../../../libs/openFrameworks//events/ofEventUtils.h \
  ../../../libs/poco/include/Poco/FIFOEvent.h \
@@ -80,7 +80,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
  ../../../libs/poco/include/Poco/Condition.h \
  ../../../libs/poco/include/Poco/ScopedUnlock.h \
  ../../../libs/openFrameworks//utils/ofUtils.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/bitset \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/bitset \
  ../../../libs/openFrameworks//types/ofBaseTypes.h \
  ../../../libs/openFrameworks//types/ofRectangle.h \
  ../../../libs/openFrameworks//3d/ofMesh.h \
@@ -94,7 +94,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
  ../../../libs/openFrameworks//gl/ofTexture.h \
  ../../../libs/openFrameworks//gl/ofGLRenderer.h \
  ../../../libs/openFrameworks//graphics/ofPolyline.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/stack \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/stack \
  ../../../libs/openFrameworks//gl/ofLight.h \
  ../../../libs/openFrameworks//3d/ofNode.h \
  ../../../libs/openFrameworks//3d/of3dUtils.h \
@@ -126,7 +126,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
  ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h \
  ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h \
  ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h \
- /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef \
+ /Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef \
  ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h \
  ../../../addons/ofxOsc/libs/oscpack/src/osc/OscException.h \
  ../../../addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h \
@@ -138,45 +138,45 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../addons/ofxOsc/src/ofxOscReceiver.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/deque:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/deque:
 
 ../../../libs/openFrameworks/ofMain.h:
 
 ../../../libs/openFrameworks//utils/ofConstants.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/typeinfo:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/typeinfo:
 
 ../../../libs/glu/include_android/glu.h:
 
 ../../../libs/tess2/include/tesselator.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstdlib:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstdlib:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstdio:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstdio:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstdarg:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstdarg:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cmath:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cmath:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/ctime:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/ctime:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/string:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/string:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/iostream:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/vector:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/vector:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstring:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/sstream:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/sstream:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/iomanip:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/iomanip:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/fstream:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/algorithm:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cfloat:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cfloat:
 
 ../../../libs/openFrameworks//utils/ofFileUtils.h:
 
@@ -204,7 +204,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../libs/openFrameworks//types/ofColor.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/limits:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/limits:
 
 ../../../libs/openFrameworks//math/ofMath.h:
 
@@ -216,13 +216,13 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../libs/openFrameworks//math/ofVec4f.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/tr1/memory:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/tr1/memory:
 
 ../../../libs/poco/include/Poco/Mutex.h:
 
 ../../../libs/poco/include/Poco/Exception.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/stdexcept:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/stdexcept:
 
 ../../../libs/poco/include/Poco/ScopedLock.h:
 
@@ -252,7 +252,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../libs/openFrameworks//utils/ofURLFileLoader.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/queue:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/queue:
 
 ../../../libs/openFrameworks//events/ofEvents.h:
 
@@ -296,7 +296,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../libs/openFrameworks//utils/ofUtils.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/bitset:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/bitset:
 
 ../../../libs/openFrameworks//types/ofBaseTypes.h:
 
@@ -324,7 +324,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../libs/openFrameworks//graphics/ofPolyline.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/stack:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/stack:
 
 ../../../libs/openFrameworks//gl/ofLight.h:
 
@@ -388,7 +388,7 @@ obj/androidRelease_neon/addons/ofxOsc/src/ofxOscReceiver.o: \
 
 ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h:
 
-/Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef:
+/Users/dantheman/android-ndk-r8d//sources/cxx-stl/gnu-libstdc++/4.6/include/cstddef:
 
 ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.h:
 

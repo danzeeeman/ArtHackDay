@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxOsc.h"
+#include "phoneNode.h"
 
 // listen on port 12345
 #define PORT 12345
@@ -23,19 +24,19 @@ public:
     void windowResized(int w, int h);
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
-    void drawCurve(deque<ofPoint> curve, float scale, float min, float max);
     
     ofTrueTypeFont font;
     ofxOscReceiver receiver;
+    ofxOscSender sender;
     
     int current_msg_string;
     string msg_strings[NUM_MSG_STRINGS];
     float timers[NUM_MSG_STRINGS];
     
-    int mouseX, mouseY;
-    string mouseButtonState;
-    
-    deque<ofPoint> points;
-    ofPoint p;
-    ofCamera cam;
+    ofPoint p, ort;
+    map<string, phoneNode> devices;
+    map<int, string> uuid;
+    map<string, int> index;
+    int count;
+    bool found;
 };

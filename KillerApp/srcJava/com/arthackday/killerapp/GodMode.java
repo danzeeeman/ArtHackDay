@@ -144,8 +144,6 @@ public class GodMode extends FragmentActivity implements
 
 		fileUri = getOutputMediaFileUri(FileColumns.MEDIA_TYPE_IMAGE);
 
-		// cameraPreviewFrame = (FrameLayout) findViewById(R.id.fakepreview);
-
 		cameraPreviewFrame = (FrameLayout) findViewById(R.id.video);
 
 		cameraPreviewFrame.setOnTouchListener(new OnTouchListener() {

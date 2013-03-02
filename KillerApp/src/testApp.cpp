@@ -4,25 +4,36 @@
 void testApp::setup() {
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
-	sender.setup("192.168.1.255", PORT);
+	sender.setup("192.168.10.255", PORT);
 	ofSetLineWidth(10);
-	ofBackground(0, 0, 0);
+	ofBackground(4, 5, 6);
+
+	uuid = ofToString(ofGetSystemTime());
+	
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
-	accel = ofxAccelerometer.getForce();
-	normAccel = accel.getNormalized();
+	  accel = ofxAccelerometer.getForce();
+	  normAccel = accel.getNormalized();
 
-	//if (frame % 8 == 0) {
+    ort = ofxAccelerometer.getOrientation();
+    normOrt = ort.getNormalized();
 		ofxOscMessage b;
 		b.setAddress("/godmode/device/uuid/accel");
 		b.addFloatArg(normAccel.x);
 		b.addFloatArg(normAccel.y);
 		b.addFloatArg(normAccel.z);
+		b.addStringArg(uuid);
 		sender.sendMessage(b);
-	//}
-
+		
+		ofxOscMessage c;
+    c.setAddress("/godmode/device/uuid/orient");
+    c.addFloatArg(normOrt.x);
+    c.addFloatArg(normOrt.y);
+    c.addFloatArg(normOrt.z);
+    c.addStringArg(uuid);
+    sender.sendMessage(c);
 }
 
 //--------------------------------------------------------------
@@ -31,6 +42,10 @@ void testApp::draw() {
 	ofDrawBitmapString("p.x = " + ofToString(normAccel.x), 10, 35);
 	ofDrawBitmapString("p.y = " + ofToString(normAccel.y), 10, 50);
 	ofDrawBitmapString("p.z = " + ofToString(normAccel.z), 10, 65);
+	
+	 ofDrawBitmapString("p.x = " + ofToString(normOrt.x), 10, 80);
+  ofDrawBitmapString("p.y = " + ofToString(normOrt.y), 10, 95);
+  ofDrawBitmapString("p.z = " + ofToString(normOrt.z), 10, 110);
 
 	ofPushMatrix();
 	ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);

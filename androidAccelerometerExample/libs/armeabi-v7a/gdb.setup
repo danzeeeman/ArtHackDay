@@ -1,6 +1,6 @@
-set solib-search-path /Users/dantheman/Documents/src/openFrameworksBig/examples/android/androidAccelerometerExample/obj/local/armeabi-v7a:/Users/dantheman/Documents/src/openFrameworksBig/examples/android/androidAccelerometerExample/libs/armeabi-v7a
-directory /Users/dantheman/Documents/android-ndk-r8d/platforms/android-14/arch-arm/usr/include
-directory /Users/dantheman/Documents/src/openFrameworksBig/examples/android/androidAccelerometerExample/src
-directory /Users/dantheman/Documents/android-ndk-r8d/sources/cxx-stl/system
-directory /Users/dantheman/Documents/src/openFrameworksBig/examples/android/androidAccelerometerExample/libs/armeabi-v7a
+set solib-search-path /Users/dantheman/openframeworks/clean/openFrameworks/apps/ArtHackDay/androidAccelerometerExample/obj/local/armeabi-v7a:/Users/dantheman/openframeworks/clean/openFrameworks/apps/ArtHackDay/androidAccelerometerExample/libs/armeabi-v7a
+directory /Users/dantheman/android-ndk-r8d//platforms/android-14/arch-arm/usr/include
+directory /Users/dantheman/openframeworks/clean/openFrameworks/apps/ArtHackDay/androidAccelerometerExample/src
+directory /Users/dantheman/android-ndk-r8d//sources/cxx-stl/system
+directory /Users/dantheman/openframeworks/clean/openFrameworks/apps/ArtHackDay/androidAccelerometerExample/libs/armeabi-v7a
 

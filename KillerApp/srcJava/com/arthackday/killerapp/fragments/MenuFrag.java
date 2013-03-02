@@ -19,8 +19,8 @@ public class MenuFrag extends Fragment {
 		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.menu_frag,
 				container, false);
 
-		Button b = (Button) rootView.findViewById(R.id.games);
-		b.setOnClickListener(new OnClickListener() {
+		Button game = (Button) rootView.findViewById(R.id.games);
+		game.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
@@ -29,6 +29,18 @@ public class MenuFrag extends Fragment {
 				startActivity(i);
 			}
 		});
+		
+		Button camera = (Button) rootView.findViewById(R.id.camera);
+    camera.setOnClickListener(new OnClickListener() {
+
+      @Override
+      public void onClick(View arg0) {
+        Intent i = new Intent();
+        i.setClassName("com.arthackday.killerapp", "com.arthackday.killerapp.camera.CaptureVideo");
+        startActivity(i);
+      }
+    });
+		
 
 		return rootView;
 	}

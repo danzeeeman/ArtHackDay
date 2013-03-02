@@ -9,7 +9,6 @@ void testApp::setup(){
 	current_msg_string = 0;
 	mouseX = 0;
 	mouseY = 0;
-	mouseButtonState = "";
     
 	ofBackground(4,5,6);
     
@@ -35,19 +34,19 @@ void testApp::update(){
 		ofxOscMessage m;
 		receiver.getNextMessage(&m);
         
-		// check for mouse moved message
 		if(m.getAddress() == "/godmode/device/uuid/accel"){
-			// both the arguments are int32's
             p.x = m.getArgAsFloat(0);
             p.y = m.getArgAsFloat(1);
             p.z = m.getArgAsFloat(2);
-            
-            points.push_back(p);
-            if(points.size()>ofGetWidth()){
-                points.pop_front();
-            }
-        }
-		else{
+            string foo = m.getArgAsString(3);
+            devices[foo].updatePoint(p);
+        }else if(m.getAddress() == "/godmode/device/uuid/orient"){
+            ort.x = m.getArgAsFloat(0);
+            ort.y = m.getArgAsFloat(1);
+            ort.z = m.getArgAsFloat(2);
+            string foo = m.getArgAsString(3);
+            devices[foo].updateOrt(p);
+        }else{
 			// unrecognized message: display on the bottom of the screen
 			string msg_string;
 			msg_string = m.getAddress();
@@ -93,9 +92,9 @@ void testApp::draw(){
 		ofDrawBitmapString(msg_strings[i], 10, 40 + 15 * i);
 	}
     
-    ofDrawBitmapString("p.x = " + ofToString(p.x), 10, 35);
-	ofDrawBitmapString("p.y = " + ofToString(p.y), 10, 50);
-	ofDrawBitmapString("p.z = " + ofToString(p.z), 10, 65);
+    //    ofDrawBitmapString("p.x = " + ofToString(p.x), 10, 35);
+    //	ofDrawBitmapString("p.y = " + ofToString(p.y), 10, 50);
+    //	ofDrawBitmapString("p.z = " + ofToString(p.z), 10, 65);
     
     
     ofPushMatrix();
@@ -104,40 +103,22 @@ void testApp::draw(){
 	ofLine(0, 0, p.x * 100, 0);
 	ofSetColor(255, 0, 255);
 	ofLine(0, 0, 0, -p.y * 100);
+    ofPopMatrix();
 	// we don't draw z as the perspective might be confusing
 	// but it's approximately one when the device is still and parallel
 	// to the ground
-	ofPopMatrix();
-    ofPushMatrix();
-    ofTranslate(0, ofGetHeight()/2);
-    drawCurve(points, 50, 0, 0);
-    ofPopMatrix();
-}
-
-
-void testApp::drawCurve(deque<ofPoint> curve, float scale, float min, float max) {
-    ofNoFill();
-    ofBeginShape();
-    for(int i = 0; i < curve.size(); i++) {
-        ofSetColor(255, 0, 0);
-        ofVertex(i, curve[i].x*scale);
-    }
-    ofEndShape();
     
-    ofBeginShape();
-    for(int i = 0; i < curve.size(); i++) {
-        ofSetColor(255, 255, 0);
-        ofVertex(i, curve[i].y*scale);
-    }
-    ofEndShape();
     
-    ofBeginShape();
-    for(int i = 0; i < curve.size(); i++) {
-        ofSetColor(0, 255, 255);
-        ofVertex(i, curve[i].z*scale);
+    int index = 1;
+    for(map<string, phoneNode>::iterator iter = devices.begin(); iter!=devices.end(); ++iter){
+        string foo = iter->first;
+        ofPushMatrix();
+        ofTranslate(0, 60*index);
+        devices[foo].draw();
+        ofPopMatrix();
+        
+        index++;
     }
-    ofEndShape();
-	
 }
 
 //--------------------------------------------------------------

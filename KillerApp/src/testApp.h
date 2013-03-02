@@ -37,8 +37,9 @@ class testApp : public ofxAndroidApp{
 		void cancelPressed();
 
 
-		ofVec3f accel, normAccel;
+		ofVec3f accel, normAccel, ort, normOrt;
 		ofxOscSender sender;
+		string uuid;
 		float frame;
 
 };
