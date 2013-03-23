@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/camera_preview"
+    android:id="@+id/preview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MergeRootFrame" >
+    android:background="@drawable/bk" >
 
-    <ImageButton
-        android:id="@+id/recordButton"
+    <FrameLayout
+        android:id="@+id/camera_preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:background="@drawable/recordbutton"
-        android:contentDescription="@string/record"
-        android:onClick="startRecording" />
+        tools:ignore="MergeRootFrame" >
 
-    <ImageButton
-        android:id="@+id/stopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:background="@drawable/playbutton"
-        android:contentDescription="@string/stop"
-        android:onClick="stopRecording" />
+        <ImageButton
+            android:id="@+id/recordButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/record"
+            android:contentDescription="@string/record"
+            android:onClick="startRecording" />
+
+        <ImageButton
+            android:id="@+id/stopButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/play"
+            android:contentDescription="@string/stop"
+            android:onClick="stopRecording" />
+    </FrameLayout>
 
 </FrameLayout>

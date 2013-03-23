@@ -48,7 +48,7 @@ public class KillerService extends IntentService
   protected boolean             mobileData    = false;
   protected int                 prefetchCount = 0;
 
-  public static String          LOCATION_URL  = "http://www.makeitdoathing.com:5100/location?appname=%s&uuid=%s&lat=%s&lng=%s&distance=%s&currentTime=%s";
+  public static String          LOCATION_URL  = "http://www.makeitdoathing.com:5100/location?appname=%s&uuid=%s&lat=%s&lng=%s&distance=%s";
 
   public KillerService()
   {
@@ -286,9 +286,7 @@ public class KillerService extends IntentService
     try
     {
       url = new URL(String.format(LOCATION_URL, getPackageName(),
-          GCMRegistrar.getRegistrationId(this), String.valueOf(lat),
-          String.valueOf(lng), distance,
-          String.valueOf(System.currentTimeMillis())));
+          GCMRegistrar.getRegistrationId(this), String.valueOf(lat), String.valueOf(lng), String.valueOf(distance)));
 
       // --This code works for updating a record from the feed--
       HttpPut httpPut = new HttpPut(url.toString());

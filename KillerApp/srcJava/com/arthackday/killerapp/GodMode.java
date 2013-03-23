@@ -140,7 +140,7 @@ public class GodMode extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.godmode);
+		setContentView(R.layout.god_mode);
 
 		fileUri = getOutputMediaFileUri(FileColumns.MEDIA_TYPE_IMAGE);
 

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arthackday.killerapp"
     android:installLocation="preferExternal"
-    android:versionCode="1"
+    android:versionCode="2"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -23,6 +23,7 @@
         android:name="com.arthackday.killerapp.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="com.arthackday.killerapp.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -79,6 +80,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".PushAudio"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme" >
         </activity>
         <activity
             android:name=".HarlemShake"
@@ -170,7 +178,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAxZhUjgjZZKtDEV-D0qdjpePRf9NRFTa8" />
+            android:value="AIzaSyBRwgu8k3JIL4WzCziB8IVY9T6h9DlYCEA" />
     </application>
 
 </manifest>

@@ -34,11 +34,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.arthackday.killerapp.KillerApp;
+import com.arthackday.killerapp.util.KillerConstants;
 import com.google.android.gcm.GCMBaseIntentService;
 import com.google.android.gcm.GCMRegistrar;
 
@@ -104,6 +106,7 @@ public class GCMIntentService extends GCMBaseIntentService
   @Override
   protected void onMessage(Context ctxt, Intent message)
   {
+    Log.i("REMOVE BEFORE COMMIT", "blahhhhhhh GCMessage");
     Bundle extras = message.getExtras();
 
     /*
@@ -114,6 +117,31 @@ public class GCMIntentService extends GCMBaseIntentService
     {
       Log.i(getClass().getSimpleName(),
           String.format("onMessage: %s=%s", key, extras.getString(key)));
+      
+      if(key.equals(KillerConstants.EXTRA_KEY_AUDIO)){
+        Log.i("REMOVE BEFORE COMMIT", "blahhhhhhh pushAudio");
+        Intent i = new Intent();
+        Log.i("REMOVE BEFORE COMMIT",extras.getString(key));
+        
+        Bundle bundle = new Bundle();
+        //Add your data to bundle
+        bundle.putString(KillerConstants.EXTRA_KEY_AUDIO, extras.getString(key));  
+        //Add the bundle to the intent
+        i.putExtras(bundle);
+        i.setClassName("com.arthackday.killerapp", "com.arthackday.killerapp.PushAudio");
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+      }
+      
+      if(key.equals(KillerConstants.EXTRA_KEY_PUSHCALL)){
+        Log.i("REMOVE BEFORE COMMIT", "blahhhhhhh callnumber");
+        String number = extras.getString(KillerConstants.EXTRA_KEY_PUSHCALL);
+        String uri = "tel:" + number.trim() ;
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse(uri));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+      }
     }
   }
 

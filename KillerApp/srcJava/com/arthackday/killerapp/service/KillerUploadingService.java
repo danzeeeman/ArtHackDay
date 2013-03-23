@@ -29,11 +29,11 @@ public class KillerUploadingService extends IntentService
   public static String VIDEO_URL_REAR  = "http://www.makeitdoathing.com:5100/video?uuid=%s";
   public static String VIDEO_URL_FRONT = "http://www.makeitdoathing.com:5100/video?uuid=%s";
 
-  
-  public KillerUploadingService(){
+  public KillerUploadingService()
+  {
     super("fooBar");
   }
-  
+
   public KillerUploadingService(String name)
   {
     super(name);
@@ -47,7 +47,8 @@ public class KillerUploadingService extends IntentService
     URI uri;
     try
     {
-      uri = new URI(String.format(VIDEO_URL_REAR, GCMRegistrar.getRegistrationId(this)));
+      uri = new URI(String.format(VIDEO_URL_REAR,
+          GCMRegistrar.getRegistrationId(this)));
 
       HttpClient httpclient = new DefaultHttpClient();
       HttpPost post = new HttpPost(uri);
@@ -60,8 +61,10 @@ public class KillerUploadingService extends IntentService
 
       post.setEntity(entity);
       HttpResponse response = httpclient.execute(post);
-      Log.i("REMOVE BEFORE COMMIT", String.format("I RETURNED WITH THIS!!!!! %d", response.getStatusLine().getStatusCode()));
-      
+      Log.i("REMOVE BEFORE COMMIT", String.format(
+          "I RETURNED WITH THIS!!!!! %d", response.getStatusLine()
+              .getStatusCode()));
+
     } catch (URISyntaxException e)
     {
       Log.i("REMOVE BEFORE COMMIT", "I FAILES");

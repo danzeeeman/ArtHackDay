@@ -24,6 +24,7 @@ import com.arthackday.killerapp.camera.CameraPreview;
 import com.arthackday.killerapp.fragments.MenuFrag;
 import com.arthackday.killerapp.fragments.PageMapFragment;
 import com.arthackday.killerapp.fragments.ScreenSlidePageFragment;
+import com.arthackday.killerapp.fragments.SplashFrag;
 import com.arthackday.killerapp.fragments.TwitterFrag;
 import com.arthackday.killerapp.gps.PlatformSpecificImplementationFactory;
 import com.arthackday.killerapp.sharedpreference.SharedPreferenceSaver;
@@ -38,7 +39,7 @@ public class KillerHomeScreen extends FragmentActivity implements
   /**
    * The number of pages (wizard steps) to show in this demo.
    */
-  private static final int        NUM_PAGES = 5;
+  private static final int        NUM_PAGES = 3;
 
   /**
    * The pager widget, which handles animation and allows swiping horizontally
@@ -157,15 +158,11 @@ public class KillerHomeScreen extends FragmentActivity implements
       switch (position)
       {
         case 0:
-          return new MenuFrag();
+          return new SplashFrag();
         case 1:
           return new TwitterFrag();
         case 2:
           return new PageMapFragment();
-        case 3:
-          return new ScreenSlidePageFragment();
-        case 4:
-          return new MenuFrag();
       }
       return new MenuFrag();
     }

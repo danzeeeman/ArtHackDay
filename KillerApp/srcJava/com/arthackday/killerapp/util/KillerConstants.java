@@ -9,7 +9,11 @@ public class KillerConstants {
 
 
 
-	/**
+	public static final String EXTRA_KEY_AUDIO = "playAudio";
+
+  public static final String EXTRA_KEY_PUSHCALL = "callPhone";
+
+  /**
 	   * TODO **P1**  You must put your Google Places API key here.
 	   * You can get your API key from: 
 	   * {@link http://code.google.com/apis/maps/documentation/places/#Limits}

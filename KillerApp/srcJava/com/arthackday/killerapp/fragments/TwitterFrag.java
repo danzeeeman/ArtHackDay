@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebView.FindListener;
 import android.widget.ListView;
 
 import com.arthackday.killerapp.R;
@@ -19,8 +21,12 @@ public class TwitterFrag extends Fragment
     ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.twitter_frag,
         container, false);
 
-
+    WebView view = (WebView) rootView.findViewById(R.id.webview);
     
+    view.getSettings().setJavaScriptEnabled(true);
+    view.getSettings().setDomStorageEnabled(true);
+    
+    view.loadUrl("https://mobile.twitter.com/search?q=%23ArtHackDay");
 
     return rootView;
   }
